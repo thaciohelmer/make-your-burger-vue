@@ -79,27 +79,53 @@
   ],
   "burgers": [
     {
-      "nome": "Matheus Battisti",
+      "nome": "Thacio ",
+      "pao": "3 Queijos",
       "carne": "Picanha",
-      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Cebola roxa",
+        "Tomate",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    },
+    {
+      "nome": "Thacio ",
+      "pao": "Parmesão e Orégano",
+      "carne": "Alcatra",
       "opcionais": [
         "Bacon",
         "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Finalizado",
-      "id": 1
-    },
-    {
-      "nome": "João Coelho",
-      "carne": "Maminha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Salame",
+        "Cheddar",
         "Cebola roxa"
       ],
       "status": "Solicitado",
-      "id": 4
+      "id": 6
+    },
+    {
+      "nome": "Thacio ",
+      "pao": "Italiano Branco",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 7
+    },
+    {
+      "nome": "Thacio ",
+      "pao": "3 Queijos",
+      "carne": "Maminha",
+      "opcionais": [
+        "Bacon",
+        "Tomate",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 8
     }
   ]
 }
