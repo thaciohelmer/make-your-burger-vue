@@ -80,39 +80,13 @@
   "burgers": [
     {
       "nome": "Thacio ",
-      "pao": "3 Queijos",
-      "carne": "Picanha",
-      "opcionais": [
-        "Bacon",
-        "Cebola roxa",
-        "Tomate",
-        "Cheddar"
-      ],
-      "status": "Solicitado",
-      "id": 5
-    },
-    {
-      "nome": "Thacio ",
-      "pao": "Parmesão e Orégano",
-      "carne": "Alcatra",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Cheddar",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
-      "nome": "Thacio ",
       "pao": "Italiano Branco",
       "carne": "Alcatra",
       "opcionais": [
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 7
     },
     {
@@ -124,7 +98,7 @@
         "Tomate",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 8
     }
   ]

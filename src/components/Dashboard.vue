@@ -1,4 +1,5 @@
 <template>
+  <Message :msg="msg" v-show="msg" />
   <div id="burger-table">
     <div>
       <div id="burger-table-heading">
@@ -21,13 +22,23 @@
             </ul>
           </div>
           <div>
-            <select name="status" class="status">
-              <option value="">Selecione</option>
-              <option :value="item.tipo" v-for="item in status" :key="item.id">
+            <select
+              name="status"
+              class="status"
+              @change="updateBurgers($event, burger.id)"
+            >
+              <option
+                :value="item.tipo"
+                v-for="item in status"
+                :key="item.id"
+                :selected="burger.status == item.tipo"
+              >
                 {{ item.tipo }}
               </option>
             </select>
-            <button class="delete-btn">Cancelar</button>
+            <button class="delete-btn" @click="deleteBurger(burger.id)">
+              Cancelar
+            </button>
           </div>
         </div>
       </div>
@@ -36,13 +47,16 @@
 </template>
 
 <script>
+import Message from "../components/Menssage.vue";
 export default {
   name: "Dashboard",
+  components: { Message },
   data() {
     return {
       burgers: null,
       burger_id: null,
       status: [],
+      msg: null,
     };
   },
   methods: {
@@ -58,6 +72,33 @@ export default {
       const data = await req.json();
 
       this.status = data;
+    },
+    async deleteBurger(id) {
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "DELETE",
+      });
+
+      const res = await req.json();
+
+      this.msg = `Pedido removido com sucesso`;
+      setTimeout(() => (this.msg = ""), 3000);
+
+      this.getPedidos();
+    },
+    async updateBurgers(e, id) {
+      const option = e.target.value;
+      const dataJson = JSON.stringify({ status: option });
+
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+
+      const res = await req.json();
+
+      this.msg = `Pedido Nº${res.id} foi atualizado para ${res.status}`;
+      setTimeout(() => (this.msg = ""), 3000);
     },
   },
   mounted() {
